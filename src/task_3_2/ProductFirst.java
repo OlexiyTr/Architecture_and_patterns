@@ -4,6 +4,6 @@ public class ProductFirst implements Product {
 
     @Override
     public void doSomething() {
-        System.out.println("ProductFirst");
+        System.out.println("doSomething() in ProductFirst");
     }
 }
