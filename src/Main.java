@@ -13,7 +13,6 @@ public class Main {
         carSimulator.showProcess();
 
         taskMarker("task_3_2");
-
     }
 
     private static void taskMarker(String nameOfTask) {
