@@ -1,6 +1,6 @@
 import task_3_1.*;
-import task_3_2.ConcreteCreatorFirst;
-import task_3_2.ConcreteCreatorSecond;
+import task_3_2.ConcreteCreator1;
+import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
 
 public class Main {
@@ -16,8 +16,8 @@ public class Main {
         carSimulator.showProcess();
 
         taskMarker("task_3_2");
-        ConcreteCreatorFirst c1 = new ConcreteCreatorFirst();
-        ConcreteCreatorSecond c2 = new ConcreteCreatorSecond();
+        ConcreteCreator1 c1 = new ConcreteCreator1();
+        ConcreteCreator2 c2 = new ConcreteCreator2();
 
         Product p1 = c1.createProduct();
         Product p2 = c2.createProduct();
