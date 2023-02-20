@@ -21,7 +21,6 @@ public class Main {
 
         Product p1 = c1.createProduct();
         Product p2 = c2.createProduct();
-
         p1.doSomething();
         p2.doSomething();
     }
