@@ -20,15 +20,13 @@ public class QuadraticEquation extends Equation {
 
         TypeOfDiscriminant discriminant = calculateDiscriminant(a, b, c);
 
-        if (discriminant instanceof DiscriminantLessThanZero) {
-            return new NoneEquationResult();
+        if (discriminant instanceof DiscriminantGreaterThanZero) {
+            return new MoreThanOneEquationResult(((DiscriminantGreaterThanZero) discriminant).getResult());
         } else if (discriminant instanceof DiscriminantIsZero) {
             return new OneEquationResult(((DiscriminantIsZero) discriminant).getResult());
-        } else if (discriminant instanceof DiscriminantGreaterThanZero) {
-            return new MoreThanOneEquationResult(((DiscriminantGreaterThanZero) discriminant).getResult());
+        } else {
+            return new NoneEquationResult();
         }
-
-        return null;
     }
 
     private TypeOfDiscriminant calculateDiscriminant(Integer a, Integer b, Integer c) {
