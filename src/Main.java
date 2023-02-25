@@ -1,4 +1,5 @@
 import task_3_1.*;
+import task_3_1_fabric_1.ShopClient;
 import task_3_2.ConcreteCreator1;
 import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
@@ -23,6 +24,12 @@ public class Main {
         Product p2 = c2.createProduct();
         p1.doSomething();
         p2.doSomething();
+
+        taskMarker("task_3_1_fabric");
+
+        ShopClient shopClient = new ShopClient();
+        shopClient.simulate();
+
     }
 
     private static void taskMarker(String nameOfTask) {
