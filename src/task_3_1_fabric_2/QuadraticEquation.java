@@ -4,6 +4,7 @@ import java.util.List;
 
 public class QuadraticEquation extends Equation {
 
+    private DiscriminantSolver discriminantSolver = new DiscriminantSolver();
     private List<Integer> odds;
 
     QuadraticEquation(List<Integer> odds) {
@@ -18,7 +19,7 @@ public class QuadraticEquation extends Equation {
         Integer b = odds.get(1);
         Integer c = odds.get(2);
 
-        TypeOfDiscriminant discriminant = calculateDiscriminant(a, b, c);
+        TypeOfDiscriminant discriminant = discriminantSolver.calculateDiscriminant(a, b, c);
 
         if (discriminant instanceof DiscriminantGreaterThanZero) {
             return new MoreThanOneEquationResult(((DiscriminantGreaterThanZero) discriminant).getResult());
@@ -29,16 +30,7 @@ public class QuadraticEquation extends Equation {
         }
     }
 
-    private TypeOfDiscriminant calculateDiscriminant(Integer a, Integer b, Integer c) {
-        double discriminantValue = Math.pow(b, 2) - 4 * (a * c);
-        if (discriminantValue > 0.0) {
-            return new DiscriminantGreaterThanZero(b, a, discriminantValue);
-        } else if (discriminantValue == 0.0) {
-            return new DiscriminantIsZero(b, a);
-        } else {
-            return new DiscriminantLessThanZero();
-        }
-    }
+
 }
 
 

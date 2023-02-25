@@ -5,6 +5,7 @@ import java.util.List;
 
 public class BiQuadraticEquation extends Equation {
 
+    private DiscriminantSolver discriminantSolver = new DiscriminantSolver();
     private List<Integer> odds;
 
     BiQuadraticEquation(List<Integer> odds) {
@@ -19,14 +20,16 @@ public class BiQuadraticEquation extends Equation {
         Integer b = odds.get(2);
         Integer c = odds.get(4);
 
-        TypeOfDiscriminant discriminant = calculateDiscriminant(a, b, c);
+        TypeOfDiscriminant discriminant = discriminantSolver.calculateDiscriminant(a, b, c);
+        return checkDiscriminant(discriminant);
+    }
 
+    private EquationResult checkDiscriminant(TypeOfDiscriminant discriminant) {
         if (discriminant instanceof DiscriminantGreaterThanZero) {
+
             ArrayList<Float> resultOfGlobalVariable = ((DiscriminantGreaterThanZero) discriminant).getResult();
 
-            System.out.println(resultOfGlobalVariable);
-
-            ArrayList<Float> realXItems = new ArrayList<Float>();
+            ArrayList<Float> realXItems = new ArrayList<>();
 
             for (Float item : resultOfGlobalVariable) {
 
@@ -44,26 +47,15 @@ public class BiQuadraticEquation extends Equation {
 
             Float result = ((DiscriminantIsZero) discriminant).getResult();
 
-            ArrayList<Float> realXItems = new ArrayList<Float>();
+            ArrayList<Float> realXItems = new ArrayList<>();
 
             realXItems.add((float) Math.sqrt(result));
+
             realXItems.add((float) -Math.sqrt(result));
 
             return new MoreThanOneEquationResult(realXItems);
         } else {
             return new NoneEquationResult();
-        }
-
-    }
-
-    private TypeOfDiscriminant calculateDiscriminant(Integer a, Integer b, Integer c) {
-        double discriminantValue = Math.pow(b, 2) - 4 * (a * c);
-        if (discriminantValue > 0.0) {
-            return new DiscriminantGreaterThanZero(b, a, discriminantValue);
-        } else if (discriminantValue == 0.0) {
-            return new DiscriminantIsZero(b, a);
-        } else {
-            return new DiscriminantLessThanZero();
         }
     }
 }
