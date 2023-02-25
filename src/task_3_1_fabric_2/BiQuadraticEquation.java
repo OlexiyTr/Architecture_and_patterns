@@ -22,25 +22,32 @@ public class BiQuadraticEquation extends Equation {
         TypeOfDiscriminant discriminant = calculateDiscriminant(a, b, c);
 
         if (discriminant instanceof DiscriminantGreaterThanZero) {
-            ArrayList<Double> resultOfGlobalVariable = ((DiscriminantGreaterThanZero) discriminant).getResult();
+            ArrayList<Float> resultOfGlobalVariable = ((DiscriminantGreaterThanZero) discriminant).getResult();
 
-            ArrayList<Double> realXItems = new ArrayList<Double>();
+            System.out.println(resultOfGlobalVariable);
 
-            for (Double item : resultOfGlobalVariable) {
-                realXItems.add(Math.sqrt(item));
-                realXItems.add(-Math.sqrt(item));
+            ArrayList<Float> realXItems = new ArrayList<Float>();
+
+            for (Float item : resultOfGlobalVariable) {
+
+                if (item == 0.0) {
+                    realXItems.add((float) Math.sqrt(item));
+                } else {
+                    realXItems.add((float) Math.sqrt(item));
+                    realXItems.add((float) -Math.sqrt(item));
+                }
             }
 
-            return new MoreThanOneEquationResult(((DiscriminantGreaterThanZero) discriminant).getResult());
+            return new MoreThanOneEquationResult(realXItems);
 
         } else if (discriminant instanceof DiscriminantIsZero) {
 
             Float result = ((DiscriminantIsZero) discriminant).getResult();
 
-            ArrayList<Double> realXItems = new ArrayList<Double>();
+            ArrayList<Float> realXItems = new ArrayList<Float>();
 
-            realXItems.add(Math.sqrt(result));
-            realXItems.add(-Math.sqrt(result));
+            realXItems.add((float) Math.sqrt(result));
+            realXItems.add((float) -Math.sqrt(result));
 
             return new MoreThanOneEquationResult(realXItems);
         } else {

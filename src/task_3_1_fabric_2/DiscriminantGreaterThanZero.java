@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class DiscriminantGreaterThanZero implements TypeOfDiscriminant {
 
-    private final ArrayList<Double> x1_x2 = new ArrayList<Double>();
+    private final ArrayList<Float> x1_x2 = new ArrayList<Float>();
 
     DiscriminantGreaterThanZero(Integer b, Integer a, Double D) {
-        Double x1 = ((-b) + (Math.sqrt(D))) / (2 * a);
-        Double x2 = ((-b) - (Math.sqrt(D))) / (2 * a);
+        Float x1 = ((float) ((-b) + (Math.sqrt(D))) / (2 * a));
+        Float x2 = ((float) ((-b) - (Math.sqrt(D))) / (2 * a));
         x1_x2.add(x1);
         x1_x2.add(x2);
     }
 
-    ArrayList<Double> getResult() {
+    ArrayList<Float> getResult() {
         return x1_x2;
     }
 
