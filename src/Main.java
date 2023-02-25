@@ -1,5 +1,6 @@
 import task_3_1.*;
 import task_3_1_fabric_1.ShopClient;
+import task_3_1_fabric_2.EquationClient;
 import task_3_2.ConcreteCreator1;
 import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
@@ -25,10 +26,14 @@ public class Main {
         p1.doSomething();
         p2.doSomething();
 
-        taskMarker("task_3_1_fabric");
+        taskMarker("task_3_1_fabric_1");
 
         ShopClient shopClient = new ShopClient();
         shopClient.simulate();
+
+        taskMarker("task_3_1_fabric_2");
+        EquationClient equationClient = new EquationClient();
+        equationClient.solve();
 
     }
 
