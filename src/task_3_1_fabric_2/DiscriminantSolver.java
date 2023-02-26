@@ -7,7 +7,11 @@ public class DiscriminantSolver {
         if (discriminantValue > 0.0) {
             return new DiscriminantGreaterThanZero(b, a, discriminantValue);
         } else if (discriminantValue == 0.0) {
-            return new DiscriminantIsZero(b, a);
+            if (a == 0) {
+                return new DiscriminantLessThanZero();
+            } else {
+                return new DiscriminantIsZero(b, a);
+            }
         } else {
             return new DiscriminantLessThanZero();
         }
