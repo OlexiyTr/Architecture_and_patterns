@@ -1,6 +1,6 @@
+import task_2_2_city_transport_park.ClientForCityAutoPark;
 import task_3_1.*;
 import task_3_1_fabric_1.ShopClient;
-import task_3_1_fabric_2.EquationClient;
 import task_3_2.ConcreteCreator1;
 import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
@@ -31,9 +31,9 @@ public class Main {
         ShopClient shopClient = new ShopClient();
         shopClient.simulate();
 
-        taskMarker("task_3_1_fabric_2");
-        EquationClient equationClient = new EquationClient();
-        equationClient.solve();
+        taskMarker("task_2_2");
+        ClientForCityAutoPark client = new ClientForCityAutoPark();
+        client.show();
 
     }
 
