@@ -7,6 +7,7 @@ import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
 import task_4_3_2_string_builder.MyStringBuilderClient;
 import task_7_3_1_usb_charger.TypeCClient;
+import task_7_3_2_auto_calculator.CustomsClient;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,6 +46,9 @@ public class Main {
 
         taskMarker("task_7_3_1_usb_charger");
         new TypeCClient();
+
+        taskMarker("task_7_3_2_auto_calculator");
+        new CustomsClient();
     }
 
     private static void taskMarker(String nameOfTask) {
