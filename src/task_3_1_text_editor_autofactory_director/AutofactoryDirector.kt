@@ -1,6 +1,6 @@
 package task_3_1_text_editor_autofactory_director
 
-class AutofactoryDirector {
+class AutofactoryDirector private constructor(){
 
     fun createSedanCar(builder: CarBuilder): CarResult {
         return builder
