@@ -3,7 +3,7 @@ package task_3_1_text_editor_autofactory_director
 class AutofactoryClient {
 
     init {
-        val director = AutofactoryDirector
+        val director = AutofactoryDirector.getInstance()
 
         val carBuilderConcrete = CarBuilderConcrete()
 
