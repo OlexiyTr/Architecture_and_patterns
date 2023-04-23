@@ -1,9 +1,11 @@
 import task_2_2_city_transport_park.ClientForCityAutoPark;
 import task_3_1.*;
 import task_3_1_fabric_1.ShopClient;
+import task_3_1_text_editor_autofactory_director.AutofactoryClient;
 import task_3_2.ConcreteCreator1;
 import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
+import task_4_3_2_string_builder.MyStringBuilderClient;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,9 +34,13 @@ public class Main {
         shopClient.simulate();
 
         taskMarker("task_2_2");
-        ClientForCityAutoPark client = new ClientForCityAutoPark();
-        client.show();
+        //ClientForCityAutoPark client = new ClientForCityAutoPark();
+        //client.show();
 
+        taskMarker("task_3_1_autofactory");
+        new AutofactoryClient();
+        taskMarker("task_4_3_2_string_builder");
+        new MyStringBuilderClient();
     }
 
     private static void taskMarker(String nameOfTask) {
