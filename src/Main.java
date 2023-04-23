@@ -6,6 +6,7 @@ import task_3_2.ConcreteCreator1;
 import task_3_2.ConcreteCreator2;
 import task_3_2.Product;
 import task_4_3_2_string_builder.MyStringBuilderClient;
+import task_7_3_1_usb_charger.TypeCClient;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,6 +42,9 @@ public class Main {
         new AutofactoryClient();
         taskMarker("task_4_3_2_string_builder");
         new MyStringBuilderClient();
+
+        taskMarker("task_7_3_1_usb_charger");
+        new TypeCClient();
     }
 
     private static void taskMarker(String nameOfTask) {
