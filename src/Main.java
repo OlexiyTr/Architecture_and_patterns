@@ -9,6 +9,7 @@ import task_4_3_2_string_builder.MyStringBuilderClient;
 import task_7_3_1_usb_charger.TypeCClient;
 import task_7_3_2_auto_calculator.CustomsClient;
 import task_8_3_1_cafe_bridge.CafeClient;
+import task_8_3_2_bridge_refactoring.task_3_2.Canvas;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,6 +53,8 @@ public class Main {
         new CustomsClient();
         taskMarker("task_8_3_1_cafe_bridge");
         new CafeClient();
+        taskMarker("task_8_3_2_refactor_brdige");
+        new Canvas();
     }
 
     private static void taskMarker(String nameOfTask) {

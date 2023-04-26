@@ -11,7 +11,7 @@ abstract class Button(private var userSize: UserSize) {
     }
 }
 
-class Canvas {
+public class Canvas {
     init {
         smallButtonExample()
         imageButtonExample()
