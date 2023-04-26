@@ -1,4 +1,4 @@
-import task_2_2_city_transport_park.ClientForCityAutoPark;
+
 import task_3_1.*;
 import task_3_1_fabric_1.ShopClient;
 import task_3_1_text_editor_autofactory_director.AutofactoryClient;
@@ -8,6 +8,7 @@ import task_3_2.Product;
 import task_4_3_2_string_builder.MyStringBuilderClient;
 import task_7_3_1_usb_charger.TypeCClient;
 import task_7_3_2_auto_calculator.CustomsClient;
+import task_8_3_1_cafe_bridge.CafeClient;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,9 +36,9 @@ public class Main {
         ShopClient shopClient = new ShopClient();
         shopClient.simulate();
 
-        taskMarker("task_2_2");
-        //ClientForCityAutoPark client = new ClientForCityAutoPark();
-        //client.show();
+//        taskMarker("task_2_2");
+//        //ClientForCityAutoPark client = new ClientForCityAutoPark();
+//        //client.show();
 
         taskMarker("task_3_1_autofactory");
         new AutofactoryClient();
@@ -49,6 +50,8 @@ public class Main {
 
         taskMarker("task_7_3_2_auto_calculator");
         new CustomsClient();
+        taskMarker("task_8_3_1_cafe_bridge");
+        new CafeClient();
     }
 
     private static void taskMarker(String nameOfTask) {
