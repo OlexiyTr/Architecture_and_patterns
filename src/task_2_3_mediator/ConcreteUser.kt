@@ -11,19 +11,19 @@ class ConcreteUser(private val userId: String, private val notifier: Notifier) :
     }
 
     override fun sendMessageAll(message: String) {
-        notifier.notifyAll(message)
+        notifier.notifyAll(from = this.userId, message = message)
     }
 
     override fun sendMessage(message: String, user: String) {
-        notifier.notify(user = user, message = message)
+        notifier.notify(from = this.userId, to = user, message = message)
     }
 
-    override fun receiveMassage(message: String, user: String) {
-        println("User $userId receives message: $message from user $user")
+    override fun receiveMassage(message: String, from: String) {
+        println("User $userId receives message: $message from user $from")
     }
 
     //for task_3_2
     override fun sendMessageForGroup(message: String, userIds: List<String>) {
-        notifier.notifyGroup(message, userIds)
+        notifier.notifyGroup(from = this.userId, toUserIds = userIds, message = message)
     }
 }

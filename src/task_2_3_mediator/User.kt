@@ -23,7 +23,7 @@ interface User {
     fun getId(): String
     fun sendMessageAll(message: String)
     fun sendMessage(message: String, user: String)
-    fun receiveMassage(message: String, user: String)
+    fun receiveMassage(message: String, from: String)
 
     fun sendMessageForGroup(message: String, userIds: List<String>)
 }

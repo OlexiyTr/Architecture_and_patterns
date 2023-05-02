@@ -7,21 +7,21 @@ class UsersNotifier : Notifier {
         this.users[user.getId()] = user
     }
 
-    override fun notify(user: String, message: String) {
-        this.users[user]?.receiveMassage(message = message, user = user)
+    override fun notify(from: String, to: String, message: String) {
+        this.users[to]?.receiveMassage(message = message, from = from)
     }
 
-    override fun notifyAll(message: String) {
+    override fun notifyAll(from: String, message: String) {
         this.users.values.forEach { user ->
-            user.receiveMassage(message, user.getId())
+            user.receiveMassage(message = message, from =from)
         }
     }
 
     //for task_3_2
-    override fun notifyGroup(message: String, userIds: List<String>) {
-        userIds.forEach { id ->
+    override fun notifyGroup(from: String, toUserIds: List<String>, message: String) {
+        toUserIds.forEach { id ->
             if (id in this.users.keys) {
-                this.users[id]?.receiveMassage(message = message, user = id)
+                this.users[id]?.receiveMassage(message = message, from = from)
             }
         }
     }
