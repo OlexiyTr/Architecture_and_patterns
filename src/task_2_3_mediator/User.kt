@@ -10,15 +10,15 @@ fun main() {
 
     user1.sendMessageAll("Hello, world!")
 
-    user2.sendMessage("Hello!", user1)
+    user2.sendMessage("Hello!", "User1")
 
 
 }
 
 interface User {
 
-    fun getId() : String
+    fun getId(): String
     fun sendMessageAll(message: String)
-    fun sendMessage(message: String, user: User)
-    fun receiveMassage(message: String, user: User)
+    fun sendMessage(message: String, user: String)
+    fun receiveMassage(message: String, user: String)
 }

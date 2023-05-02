@@ -5,6 +5,7 @@ class ConcreteUser(private val userId: String, private val notifier: Notifier) :
     init {
         notifier.addUser(this)
     }
+
     override fun getId(): String {
         return userId
     }
@@ -12,10 +13,12 @@ class ConcreteUser(private val userId: String, private val notifier: Notifier) :
     override fun sendMessageAll(message: String) {
         notifier.notifyAll(message)
     }
-    override fun sendMessage(message: String, user: User) {
+
+    override fun sendMessage(message: String, user: String) {
         notifier.notify(user = user, message = message)
     }
-    override fun receiveMassage(message: String, user: User) {
-        println("User $userId receives message: $message from user ${user.getId()}")
+
+    override fun receiveMassage(message: String, user: String) {
+        println("User $userId receives message: $message from user $user")
     }
 }
