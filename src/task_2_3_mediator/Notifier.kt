@@ -4,5 +4,7 @@ interface Notifier {
     fun notify(user: String, message: String)
     fun notifyAll(message: String)
 
+    fun notifyGroup(message: String, userIds: List<String>)
+
     fun addUser(user: User)
 }

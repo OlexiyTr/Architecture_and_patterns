@@ -17,4 +17,13 @@ class UsersNotifier : Notifier {
         }
     }
 
+    //for task_3_2
+    override fun notifyGroup(message: String, userIds: List<String>) {
+        userIds.forEach { id ->
+            if (id in this.users.keys) {
+                this.users[id]?.receiveMassage(message = message, user = id)
+            }
+        }
+    }
+
 }

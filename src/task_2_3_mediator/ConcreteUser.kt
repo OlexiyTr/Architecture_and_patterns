@@ -21,4 +21,9 @@ class ConcreteUser(private val userId: String, private val notifier: Notifier) :
     override fun receiveMassage(message: String, user: String) {
         println("User $userId receives message: $message from user $user")
     }
+
+    //for task_3_2
+    override fun sendMessageForGroup(message: String, userIds: List<String>) {
+        notifier.notifyGroup(message, userIds)
+    }
 }

@@ -12,6 +12,9 @@ fun main() {
 
     user2.sendMessage("Hello!", "User1")
 
+    //for task_3_2
+    user3.sendMessageForGroup("Hi, group:)", listOf(user1.getId(), user4.getId()) )
+
 
 }
 
@@ -21,4 +24,6 @@ interface User {
     fun sendMessageAll(message: String)
     fun sendMessage(message: String, user: String)
     fun receiveMassage(message: String, user: String)
+
+    fun sendMessageForGroup(message: String, userIds: List<String>)
 }
