@@ -48,7 +48,7 @@ data class Cake(
         return "Cake with: chocolate = ${chocoCount}, cream = ${creamCount}, frostings = $frostingCount, strawberry = $strawberryCount"
     }
 
-    fun <T> addFiller(prop: T) {
+    fun <T : Filler> addFiller(prop: T) {
         when (prop) {
             is Chocolate -> chocolates.add(prop)
             is Cream -> creams.add(prop)
