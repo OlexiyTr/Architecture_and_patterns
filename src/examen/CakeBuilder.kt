@@ -14,7 +14,7 @@ interface CakeBuilder {
 
 class CakeBuilderConcrete : CakeBuilder {
 
-    private var cake: Cake? = null
+    private var cake: CakeDefault? = null
     override fun reset() {
         cake = null
     }

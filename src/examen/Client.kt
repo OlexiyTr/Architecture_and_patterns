@@ -28,12 +28,16 @@ class CakeDirector(private val builder: CakeBuilder) {
     }
 }
 
+abstract class CakeDefault {
+    abstract fun <T : Filler> addFiller(prop: T)
+}
+
 data class Cake(
         private val chocolates: MutableList<Chocolate> = mutableListOf(),
         private val creams: MutableList<Cream> = mutableListOf(),
         private val frostings: MutableList<Frosting> = mutableListOf(),
         private val strawberrys: MutableList<Strawberry> = mutableListOf()
-) {
+) : CakeDefault() {
 
     override fun toString(): String {
 
@@ -48,7 +52,7 @@ data class Cake(
         return "Cake with: chocolate = ${chocoCount}, cream = ${creamCount}, frostings = $frostingCount, strawberry = $strawberryCount"
     }
 
-    fun <T : Filler> addFiller(prop: T) {
+    override fun <T : Filler> addFiller(prop: T) {
         when (prop) {
             is Chocolate -> chocolates.add(prop)
             is Cream -> creams.add(prop)
