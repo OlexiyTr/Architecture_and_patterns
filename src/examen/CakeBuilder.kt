@@ -43,7 +43,7 @@ class CakeBuilderConcrete : CakeBuilder {
         }
     }
 
-    private fun <T> additionalCreator(item: T) {
+    private fun <T : Filler> additionalCreator(item: T) {
         val newCake = Cake()
         newCake.addFiller(item)
         cake = newCake
